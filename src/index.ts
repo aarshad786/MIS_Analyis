@@ -24,18 +24,16 @@ sheet1Data.forEach((x: any) => {
   if (!classInfo) {
     classInformation[key] = {
       ...x,
-      offset:
-        parseInt(x.standard_hour_daywise_milestones__expected_class_hours, 10) -
-        parseInt(x.class_hrs, 10),
+      offset: parseInt(x.standard_hour_daywise_milestones__expected_class_hours, 10) - parseInt(x.class_hrs, 10),
     };
   }
 });
 
-interface IData {
+interface IRowData {
   academic_year: string;
   mis_name: string;
-  class_id: string;
-  is_host: string;
+  class_id: number;
+  is_host: boolean;
   region: string;
   local: string;
   centre: string;
@@ -43,11 +41,11 @@ interface IData {
   division: string;
   class_hrs: number;
   no_of_students: number;
-  teacher_hr_id: string;
+  teacher_hr_id: number;
   teacher_first_name: string;
   teacher_last_name: string;
   last_session_date: string;
-  standard_hour_daywise_milestones__id: string;
+  standard_hour_daywise_milestones__id: number;
   standard_hour_daywise_milestones__cutoff_date: string;
   standard_hour_daywise_milestones__z3: number;
   standard_hour_daywise_milestones__z4: number;
