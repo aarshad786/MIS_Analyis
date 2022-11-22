@@ -1,6 +1,12 @@
 const { parse } = require("node-xlsx");
 const { writeFileSync } = require("fs");
 const moment = require("moment");
+var markdownpdf = require("markdown-pdf");
+
+const createMakrdown = (from, to) =>
+  new Promise((resolve) => {
+    markdownpdf().from(from).to(to, resolve);
+  });
 
 const worksheet = parse(`./classeslagging.xlsx`, { cellDates: true });
 
